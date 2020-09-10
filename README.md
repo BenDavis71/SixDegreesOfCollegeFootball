@@ -1,1 +1,1 @@
-# CFB-Recruiting
+# Six Degrees of College Football
