@@ -7,7 +7,7 @@ import pandas as pd
 import networkx as nx
 import streamlit as st
 import graphviz as graphviz
-import requests
+
 
 
 st.title('Six Degrees of College Football')
@@ -19,7 +19,23 @@ def getData():
     df = pd.read_csv(url)
     return df
 
+def addTeamsAndCoachesToGraph(row):
+    if row.squad not in added_nodes:
+        G.add_node(row.squad)
+        added_nodes.append(row.squad)
+    if row.coach not in added_nodes:
+        G.add_node(row.coach)
+        added_nodes.append(row.coach)
+    G.add_edge(row.squad, row.coach)   
+
+
 df = getData()
+
+G = nx.Graph()
+added_nodes = []
+
+_ = df.apply(lambda r: addTeamsAndCoachesToGraph(r), axis=1)
+
 
 coaches = list(list(df.sort_values(by='coach')['coach'].unique()))
 
@@ -32,17 +48,7 @@ b = st.selectbox(
 )
 
 
-G = nx.Graph()
-added_team = []
 
-def add_movie_and_actors_to_graph(row):
-    if row.squad not in added_team:
-        G.add_node(row.squad)
-        added_team.append(row.squad)
-    G.add_node(row.coach)
-    G.add_edge(row.squad, row.coach)
-
-_ = df.apply(lambda r: add_movie_and_actors_to_graph(r), axis=1)
 
 
 path = nx.shortest_path(G,source=a,target=b)
