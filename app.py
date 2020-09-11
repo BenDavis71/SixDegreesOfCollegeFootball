@@ -81,7 +81,7 @@ i = 0
 for _ in path:
     if i + 1 == len(path):
         break  #exit function once we  have created all relevant nodes and edges
-    graph.edge(path[i], path[i+2], label=path[i+1], arrowhead = 'none')
+    graph.edge(path[i], path[i+2], label=path[i+1])
     i+=2
 
 st.graphviz_chart(graph)
