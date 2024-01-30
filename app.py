@@ -85,6 +85,16 @@ for _ in path:
     i+=2
 
 st.write(graph)
+try:
+    st.write(str(graph))
+    st.write(1)
+except:
+    pass
+try:
+    st.write(graph.to_string())
+    st.write(2)
+except:
+    pass
 st.graphviz_chart(graph)
 
 
