@@ -1,6 +1,5 @@
 numpy
 streamlit==0.64.0
 pandas
-matplotlib
 graphviz
 networkx
