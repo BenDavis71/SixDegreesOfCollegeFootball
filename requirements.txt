@@ -1,5 +1,6 @@
+pip install --use-pep517
 numpy==1.16.4
-pandas==0.24.2
 streamlit==0.64.0
+pandas
 graphviz
 networkx
