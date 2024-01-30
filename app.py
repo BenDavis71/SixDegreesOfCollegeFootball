@@ -84,18 +84,7 @@ for _ in path:
     graph.edge(path[i], path[i+2], label=path[i+1])
     i+=2
 
-st.write(graph)
-try:
-    st.write(str(graph))
-    st.write(1)
-except:
-    pass
-try:
-    st.write(graph.to_string())
-    st.write(2)
-except:
-    pass
-st.graphviz_chart(graph)
+st.graphviz_chart(str(graph))
 
 
 st.markdown('___')
