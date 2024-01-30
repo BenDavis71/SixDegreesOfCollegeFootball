@@ -11,7 +11,7 @@ import graphviz as graphviz
 
 
 st.title('Six Degrees of College Football')
-st.markdown('_Data courtesy of BorderingOnWisdom | Inspiration from @__DapperDan_')
+st.markdown('_Data courtesy of BorderingOnWisdom | Inspiration from Sennua Lawson')
 
 
 #read-in data that was collected from https://borderingonwisdom.wordpress.com/college-football-coach-database/ then processed in a jupyter notebook
