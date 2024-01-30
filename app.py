@@ -86,9 +86,6 @@ for _ in path:
 
 st.graphviz_chart(str(graph))
 
-path = nx.all_shortest_paths(G,source=a,target=b)
-st.graphviz_chart(str(graph))
-
 
 st.markdown('___')
 st.markdown('Created by [Ben Davis](https://github.com/BenDavis71/)')
